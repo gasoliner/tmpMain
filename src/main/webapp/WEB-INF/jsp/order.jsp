@@ -77,29 +77,24 @@
                             <div class="lygs-link">
                                 <div class="dnew-sum">
                                     <dl>
-                                        <dt>
-                                        </dt>
+                                        <dt></dt>
                                         <dd>
                                             <h3>订单编号：</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.oid}
                                             <h3>订单名称：</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.name}
                                             <h3>订单创建时间：</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.voPublish}
                                             <h3>订单状态：</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.state}
                                             <h3>订单备注：</h3>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${order.var}
-
                                                 <div class="price-yd">
                                                 <span class="sq-price">支付金额：
                                                 <span class="ph">&yen</span>${order.sum}<span class="pb"></span>
                                                 </span>
                                                 <div class="clear"></div>
                                                 </div>
-                                            <c:if test="${order.state == '已发货'}">
+                                            <c:if test="${order.state == '已确认'}">
                                                 <form action="/order/received/${order.oid}" method="post">
                                                     <input  type="submit" style="font-size:16px;width:200px;height:35px;line-height:35px;background:transparent url(/ui/sub.png) no-repeat;border:none;" value="确认收货" >
                                                 </form>
                                             </c:if>
-                                            <%--<div class="tfour-c"><a href="${pageContext.request.contextPath}/shoppingCart/createNewItem?kind=特产&price=${special.price}&name=${special.name}特产"--%>
-                                                                    <%--target="_blank" title="查看" class="tfour-yd"></a>--%>
-                                            <%--</div>--%>
                                         </dd>
                                     </dl>
                                 </div>

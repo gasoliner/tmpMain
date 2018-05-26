@@ -77,6 +77,10 @@ public class ShoppingCartController {
 
     @RequestMapping("/add")
     public void add(String kind, Double price, String name, Integer count, HttpServletRequest request,HttpServletResponse response) throws IOException {
+        if (count == null) {
+            response.sendRedirect("/");
+            return;
+        }
         ShoppingCart shoppingCart = (ShoppingCart) request.getSession().getAttribute("shoppingCart");
         if (shoppingCart == null) {
             shoppingCart = new ShoppingCart();

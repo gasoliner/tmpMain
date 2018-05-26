@@ -20,7 +20,9 @@
 
             <li sid="" class=""><a href="${pageContext.request.contextPath}/order/ui" title="" target="_blank">我的订单</a></li>
 
-            <li sid="" class=""><a href="${pageContext.request.contextPath}/order/ui" title="" target="_blank">我的订单</a></li>
+            <li sid="" class=""><a href="${pageContext.request.contextPath}/order/ui" title="" target="_blank">讨论区</a></li>
+
+            <li sid="" class=""><a href="${pageContext.request.contextPath}/order/ui" title="" target="_blank">投诉区</a></li>
         </ul>
     </div>
 </div>
