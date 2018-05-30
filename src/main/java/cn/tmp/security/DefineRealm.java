@@ -14,13 +14,11 @@ public class DefineRealm extends AuthorizingRealm {
     @Autowired
     ConsumerService consumerService;
 
-//    授权的验证
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         return null;
     }
 
-//    登录验证
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         System.out.println("authenticationToken.getPrincipal()-" + authenticationToken.getPrincipal());

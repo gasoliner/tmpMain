@@ -2,9 +2,7 @@ package cn.tmp.vo;
 
 import cn.tmp.po.Special;
 
-/**
- * Created by Ww on 2018/5/16.
- */
+
 public class VoSpecial extends Special {
 
     private String voAid;

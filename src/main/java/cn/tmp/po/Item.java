@@ -1,8 +1,6 @@
 package cn.tmp.po;
 
-/**
- * Created by Ww on 2018/5/20.
- */
+
 public class Item {
 
     private String kind;

@@ -5,9 +5,7 @@ import cn.tmp.po.Route;
 
 import java.util.List;
 
-/**
- * Created by Ww on 2018/5/14.
- */
+
 public class VoRoute extends Route {
 
     private String voRid;

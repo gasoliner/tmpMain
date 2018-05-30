@@ -2,9 +2,7 @@ package cn.tmp.vo;
 
 import java.util.List;
 
-/**
- * Created by Ww on 2018/5/19.
- */
+
 public class VoRouteUI {
 
     private String region;
