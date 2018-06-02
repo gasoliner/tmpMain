@@ -1,183 +1,387 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+<html>
 <head>
-    <title>留言区 - 讨论区 - 热门景点 - 景点图片 - TMP旅游指南</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>留言区 - TMP旅游指南</title>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
     <link rel="shortcut icon" href="http://m.elongstatic.com/trip/pc/default/favicon.ico" type="image/x-icon"/>
     <link rel="stylesheet" type="text/css"
           href="http://m.elongstatic.com/pcheaderfooter/2017/06/files/headerfoot/css/styles.css?20170614">
     <link href="http://m.elongstatic.com/trip/pc/default/common/style/share.css" type="text/css" rel="stylesheet"/>
+    <script src="http://m.elongstatic.com/trip/pc/default/common/js/jquery-1.6.2.js" type="text/javascript"></script>
+    <link href="http://m.elongstatic.com/trip/pc/default/dest/style/destnew.css" type="text/css" rel="stylesheet"/>
     <link href="http://m.elongstatic.com/trip/pc/default/common/style/lvyou_header.css" type="text/css"
           rel="stylesheet"/>
 
     <!--主站登录框样式-->
     <!--<link rel="stylesheet" href="http://www.elongstatic.com/common/css/EL_common.css" type="text/css" media="all">-->
-    <script src="http://m.elongstatic.com/trip/pc/default/common/js/jquery-1.6.2.js" type="text/javascript"></script>
-
     <!--[if IE]>
     <script src="http://m.elongstatic.com/trip/pc/default/common/js/html5.js" type="text/javascript"></script>
     <![endif]-->
 </head>
 <body>
 
-
-<div id="header" class="header">
-    <div class="header-top  clearfix">
-    </div>
-
-
-    <!--导航-->
-    <jsp:include page="neg.jsp"/>
-
-</div>
-
-<style type="text/css">
-    .appWrap {
-        background: url(http://www.elongstatic.com/images/other/app-com.png) no-repeat 0 -483px
-    }
-
-    .appBox .close {
-        background: url(http://www.elongstatic.com/images/other/app-com.png) no-repeat -328px -182px;
-        _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png);
-    }
-
-    .appBox .close:hover {
-        background-position: -358px -182px;
-    }
-
-    .appBox .intro {
-        width: 480px;
-        height: 210px;
-        background: url(http://img.elongstatic.com/index/other/fx_btm.png) no-repeat 0 0px;
-        font-size: 0;
-        line-height: 0;
-        overflow: hidden;
-        position: absolute;
-        top: 27px;
-        left: 33px;
-    }
-
-    .appBox .way i {
-        display: inline-block;
-        width: 43px;
-        height: 43px;
-        margin-right: 5px;
-        background: url(http://www.elongstatic.com/images/other/app-com.png) no-repeat 0 -334px;
-        _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png);
-        vertical-align: middle;
-    }
-
-    .appBox .way .but {
-        width: 170px;
-        height: 30px;
-        background: url(http://www.elongstatic.com/images/other/app-com.png) no-repeat -181px -334px;
-        _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png);
-        border: 0;
-        text-align: center;
-        color: #fff;
-        font: 16px "Microsoft Yahei", Simsun, sans-serif;
-        cursor: pointer;
-    }
-
-    .appBox .way .but:hover {
-        background-position: -181px -364px;
-    }
-
-    .appBox .way .success i {
-        width: 20px;
-        height: 16px;
-        margin-right: 5px;
-        background: url(http://www.elongstatic.com/images/other/app-com.png) no-repeat -181px -394px;
-        _background-image: url(http://www.elongstatic.com/images/other/app-com-ie6.png);
-        vertical-align: middle;
-    }
-
-</style>
-
-<div class="clear"></div>
-</div>
-
-
 <div id="content">
 
     <div id="header">
+        <!--导航-->
 
+        <style>
+            .textareaComment{
+                resize: none;
+                width: 100%;
+                height: 100px;
+                /*max-width: 350px;*/
+                /*max-height: 100px;*/
+            }
+        </style>
+        <jsp:include page="neg.jsp"/>
         <div class="clear"></div>
-        <!--AdForward Begin:-->
-
-        <!--AdForward End-->
         <div class="blank10"></div>
 
+        <style>
+            .sub{
+                margin:10px;font-size:16px;width:100px;height:35px;line-height:35px;background:transparent url(/ui/sub.png) no-repeat;border:none;
+            }
+        </style>
 
-        <link href="http://m.elongstatic.com/trip/pc/default/guide/css/jd.css" type="text/css" rel="stylesheet">
+        <script type="text/javascript">
+            var cname = '亚丁'; // 目的地中文名
+            var did = '30317'; // 目的地id
+            var desturl = 'yadingziranbaohuqu'; // 目的地英文名
+            var url = 'http://trip.elong.com/yadingziranbaohuqu/'; // 目的地链接地址
+            var channel = 'index'; // 频道英文
+            var channelid = '0'; // 频道id
+            var channelcname = 'index'; // 频道中文
+            var articleid = '0'; // 文章id
+            var articlename = ''; // 文章中文
+            var i_flash = '';
+            var v_flash = '';
+        </script>
+        <!--没头图-->
+        <header class="dnew-hno">
+            <h1> 留言区</h1>
+            <div class="hno-r">
+                <div class="dnew-gz dnewno-gz">
+                    <div class="_followMenu" value="30317"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+            <div class="clear"></div>
+        </header>
+        <!--没头图 end-->
+        <hr/>
 
-        <!--------main begin--------->
-        <div id="main">
+        <!--目的地二级导航 end-->
+        <section id="dnew-main">
+            <div name="ad39"></div>
             <div class="blank10"></div>
+            <article class="dnew-con dnew-con1">
+
+                <aside class="dnew-left">
+                    <section class="dleft-box">
+                        <script type="text/javascript"
+                                src="http://m.elongstatic.com/trip/pc/default/dest/js/sns_home.js"></script>
+                        <c:forEach items="${leavemessageList}" var="leavemessage">
+                            <!--简介-->
+                            <section class="dnew-jj">
+                                <header class="dnew-title">
+                                    <div class="dtitle">
+                                        <em class="jj-icon"></em>
+                                        <h2>${leavemessage.name}
+                                        </h2>
+                                    </div>
+                                </header>
+                                <div class="lygs-link">
+                                        <%--<a href="http://trip.elong.com/yadingziranbaohuqu/jianjie/" target="_blank">简介</a>  |  <a href="http://trip.elong.com/yadingziranbaohuqu/jiaotong/" target="_blank">交通</a>  |  					</div>--%>
+                                    <div class="dnew-sum">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;${leavemessage.content}
+                                        <p align="right">${leavemessage.publisher} 发布于 ${leavemessage.voPublish}</p>
+                                    </div>
+                                </div>
+                            </section>
+                            <!--简介 end-->
+                        </c:forEach>
 
 
-            <div class="jd-banner" name="ad11" style="margin-bottom: 10px;"></div>
+                        <div name="ad41"></div>
+                        <div class="clear"></div>
+                        <!--旅游景点 end-->
 
-            <div class="jd-banner" name="ad12"></div>
-            <div class="blank"></div>
-            <c:forEach items="${leavemessageList}" var="leavemessage">
-                <%--<div style="height: auto" class="view-address">--%>
-                    <%--<div class="hottj-header yz-header address-header">--%>
-                        <%--<h2>${leavemessage.publisher}-${leavemessage.name}-${leavemessage.voPublish}</h2>--%>
-                    <%--</div>--%>
-                    <%--<div>--%>
-                        <%--<div class="va-content">--%>
-                            <%--&lt;%&ndash;<dl style="width: 100%" class="yz-view">&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<dt><span class="more v-more"></span><b></b></dt>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;<c:forEach items="${attraction.voAttractionList}" var="att">&ndash;%&gt;--%>
-                                    <%--&lt;%&ndash;<dd style="width: 100%"><a href="${pageContext.request.contextPath}/attraction/detail/${att.aid}" target="_blank">${att.name}</a></dd>&ndash;%&gt;--%>
-                                <%--&lt;%&ndash;</c:forEach>&ndash;%&gt;--%>
-                            <%--&lt;%&ndash;</dl>&ndash;%&gt;--%>
-                            <%--${leavemessage.content}<br/>--%>
-                        <%--</div>--%>
-                    <%--</div>--%>
-                <%--</div>--%>
-                <%--<!--------region end--------->--%>
-                <%--<div class="blank10"></div>--%>
-                <%--<div class="jd-banner" name="ad27"></div>--%>
+                        <section class="dnew-zstj">
 
-                <section class="dnew-jj">
-                    <header class="dnew-title">
-                        <div class="dtitle">
-                            <em class="jj-icon"></em>
-                            <h2><a href="#">${leavemessage.publisher}-${leavemessage.name}-${leavemessage.voPublish}</a>
-                            </h2>
+                        </section>
+
+
+                    </section>
+                </aside>
+                <aside class="dnew-right">
+
+                    <style type="text/css">
+                        .google-ad img {
+                            border: 1px solid #D5EAFF;
+                            display: block;
+                        }
+                    </style>
+
+
+                    <!--地图-->
+
+
+                    <!--地图 end-->
+                    <div class="blank"></div>
+                    <!--出行日历-->
+                    <section class="dnew-312 bd">
+                        <header class="d312-title">
+                            <h3>发布我的留言</h3>
+                        </header>
+                        <div class="cxrj-con">
+                            <%--<p><em class="cxrj-icon"></em><b>开放时间：</b><br>07:30-16:30。</p>--%>
+                            <form method="post" action="/leavemessage/addition">
+                                <div style="margin: 20px;">
+                                    <input style="width: 100%;" type="text" name="name" placeholder="填写留言标题">
+                                </div>
+                                <div style="margin: 20px;">
+                                    <textarea class="textareaComment" name="content" placeholder="填写留言内容"></textarea>
+                                </div>
+                                <div style="margin: 20px;">
+                                    <input class="sub" type="submit" value="发布我的留言">
+                                </div>
+                            </form>
                         </div>
-                    </header>
-                    <div class="lygs-link">
-                        <div class="dnew-sum">
-                                ${attraction.addr}
-                        </div>
-                    </div>
-                </section>
-                <div name="ad41"></div>
+                    </section>
+                    <div class="blank"></div>
+
+                    <!--出行日历 end-->
+                    <!--旅游资讯 旅游问答-->
+                    <div class="blank"></div>
+                    <script>
+                        $(function () {
+                            $(".zxwd-tab ul li").hover(function () {
+                                $(this).addClass("on").siblings().removeClass("on");
+                                var index = $(".zxwd-tab ul li").index(this);
+                                $(".zxwd-li").eq(index).show().siblings().hide();
+                            })
+                        })
+                    </script>
+
+
+                </aside>
                 <div class="clear"></div>
+                <div class="dnew-line dnew-line1"></div>
+            </article>
+        </section>
+
+        <script type="text/javascript" src="http://m.elongstatic.com/trip/pc/plugin/jquery.qrcode.min.js"></script>
+        <script type="text/javascript">
+            var url = location.href.replace('trip.elong.com/', 'm.elong.com/trip/');
+            url += '?&pccode=1';
+
+            if (location.pathname !== '/') {
+                $('#page-h5-code').qrcode({
+                    width: 55,
+                    height: 55,
+                    text: url,
+                });
+
+            }
+            $('.app-close').click(function () {
+                $('.app-download').remove();
+            });
+        </script>
 
 
-            </c:forEach>
-
-            <div class="blank10"></div>
-            <div class="jd-banner" name="ad76" style="display:none;"></div>
-            <script type="text/javascript">
-                $(function () {
-                    $(".zbtour-tab ul li").hover(function () {
-                        $(this).addClass("zbtour-on").siblings().removeClass("zbtour-on");
-                        var index = $(".zbtour-tab ul li").index(this);
-                        $(".va-content").eq(index).show().siblings().hide();
-                    })
-                })
-            </script>
+        <div class="message-box" id="big-map-box"
+             style="z-index: 1; width: 616px; height: 396px; top: 50%; left: 50%; margin-left: -308px; margin-top: -198px;position: fixed;display: none;">
         </div>
-        <!--------main end-------->
-        <div id="sl"><a href="javascript:scroll(0,0)"></a></div>
+
+        <script type="text/javascript" src="http://m.elongstatic.com/trip/pc/default/dest/js/jcarousellite.js"></script>
+        <script type="text/javascript">
+            $(".jd-pic").jCarouselLite({
+                btnNext: ".next",
+                btnPrev: ".prev",
+                speed: 1000,
+                visible: 3,
+                scroll: 1
+            });
+            if ($('.jd-pic ul li').length <= 9) {
+                $('.prev').hide();
+                $('.next').hide();
+            }
+            if ($('.jd-pic ul li').length <= 3) {
+                $('.jd-pic ul').css({'left': '-386px'});
+            }
+            $(".zxwd-tab ul li").hover(function () {
+                $(this).addClass("on").siblings().removeClass("on");
+                var index = $(".zxwd-tab ul li").index(this);
+                $(".zxwd-li").eq(index).show().siblings().hide();
+            })
+            $(function () {
+                if ($('.dnew-right :last').attr('class') == 'blank') {
+                    $('.dnew-right :last').remove();
+                }
+                if ($('.dnew-left :last').attr('class') == 'blank') {
+                    $('.dnew-left :last').remove();
+                }
+
+                $('.dp-textarea').focus(function () {
+                    if ($(this).val() == dpstr) {
+                        $(this).val('');
+                    }
+
+                });
+                $('.dp-textarea').blur(function () {
+                    if ($(this).val().length < 1) {
+                        $(this).val(dpstr);
+                    }
+
+                });
+            });
+
+
+        </script>
+        <script type="text/javascript" src="http://m.elongstatic.com/trip/pc/default/common/js/common_map.js"></script>
+        <script type="text/javascript">
+            // 标注点数组
+
+
+            // 百度地图
+            function B_AddMap() {
+                // 地图初始化
+                B_initMap('google_map_canvas', MAP_BASEDATA[0].pointX, MAP_BASEDATA[0].pointY, 10);
+
+                // 根据数组创建标注：多地点标准数组
+                B_windowType = 'AJAX';			//设置点击打开窗口类型：URL
+                B_addMarker(MAP_BASEDATA);
+                B_createDirections(MAP_BASEDATA);
+            }
+
+            // 谷歌地图
+            function G_AddMap() {
+                // 地图初始化
+                G_initMap('google_map_canvas', MAP_BASEDATA[0].pointY, MAP_BASEDATA[0].pointX, 10);
+
+                // 根据数组创建标注：多地点标准数组
+                G_windowType = 'AJAX';			//设置点击打开窗口类型：URL
+                G_addMarker(MAP_BASEDATA);
+
+                // 根据数组调整视野
+                G_createDirections(MAP_BASEDATA, true);
+            }
+
+            // 地图初始化
+            function G_initMap(M, X, Y, Z) {
+
+                var _latlng = new google.maps.LatLng(X, Y);
+                var _myOptions = {
+                    zoom: Z,
+                    center: _latlng,
+                    disableDefaultUI: true,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                G_map = new google.maps.Map(document.getElementById(M), _myOptions);
+                G_debug();
+            }
+
+            // 地图：初始化地图：经度,纬度,缩放级别
+            function B_initMap(M, X, Y, Z) {
+                B_map = new BMap.Map(M);
+
+                var _point = new BMap.Point(X, Y);
+                B_map.centerAndZoom(_point, Z);
+
+                // B_map.addControl(new BMap.ScaleControl());			// 添加比例尺控件
+                B_map.enableScrollWheelZoom();						// 启用滚轮放大缩小
+
+
+                B_debug();
+            }
+        </script>
+        <script type="text/javascript">
+            $(function () {
+
+                var MAP_BASEDATA = [];
+
+
+                $('.map-fc,.map-c').click(function (e) {
+                    e.preventDefault();
+                    $('#big-map-box').show();
+                    bigMapInit();
+                    return false;
+                });
+
+                $('#big-map-close').click(function () {
+                    $('#big-map-box').hide();
+                });
+
+
+                function bigMapInit() {
+
+                    B_AddMap_big();
+
+
+                    function B_AddMap_big() {
+                        // 地图初始化
+                        B_initMap_big('google_map_canvas_big', MAP_BASEDATA[0].pointX, MAP_BASEDATA[0].pointY, 13);
+
+                        // 根据数组创建标注：多地点标准数组
+                        //B_windowType = 'URL';         //设置点击打开窗口类型：URL
+                        B_addMarker(MAP_BASEDATA);
+                    }
+
+                    // 谷歌地图
+                    function G_AddMap_big() {
+                        // 地图初始化
+                        G_initMap_big('google_map_canvas_big', MAP_BASEDATA[0].pointY, MAP_BASEDATA[0].pointX, 12);
+
+                        // 根据数组创建标注：多地点标准数组
+                        //G_windowType = 'URL';         //设置点击打开窗口类型：URL
+                        G_addMarker(MAP_BASEDATA);
+
+                        // 根据数组调整视野
+                        G_createDirections(MAP_BASEDATA, true);
+                    }
+
+                    // 地图初始化
+                    function G_initMap_big(M, X, Y, Z) {
+
+                        var _latlng = new google.maps.LatLng(X, Y);
+                        var _myOptions = {
+                            zoom: Z,
+                            center: _latlng,
+                            disableDefaultUI: true,
+                            mapTypeId: google.maps.MapTypeId.ROADMAP
+                        };
+                        G_map = new google.maps.Map(document.getElementById(M), _myOptions);
+                        G_debug();
+                    }
+
+                    // 地图：初始化地图：经度,纬度,缩放级别
+                    function B_initMap_big(M, X, Y, Z) {
+                        B_map = new BMap.Map(M);
+
+                        var _point = new BMap.Point(X, Y);
+                        B_map.centerAndZoom(_point, Z);
+
+                        B_map.addControl(new BMap.ScaleControl());          // 添加比例尺控件
+                        B_map.enableScrollWheelZoom();                      // 启用滚轮放大缩小
+
+
+                        B_debug();
+                    }
+
+                }
+            });
+
+        </script>
+        <script type="text/javascript"
+                src="http://m.elongstatic.com/trip/pc/default/common/js/hotel_href_qq.js"></script>
+        <script type="text/javascript"
+                src="http://m.elongstatic.com/trip/pc/default/dest/js/commen_destnew.js"></script>
         <div class="blank"></div>
         <style>
             .wexinrightad {
@@ -270,9 +474,12 @@
                 background: url(http://m.elongstatic.com/trip/pc/default/static/images/erweima1.jpg) no-repeat;
             }
         </style>
-        <div class="L_bar">
+        <%--<div class="L_bar">--%>
 
-        </div>
+        <%--<div class="erweima"><a href="#"><img--%>
+        <%--src="http://m.elongstatic.com/trip/pc/default/static/images/erweima.jpg" alt="微信" id="ewm"/>--%>
+        <%--</a></div>--%>
+        <%--</div>--%>
         <script>
 
             $(document).ready(function () {
@@ -315,8 +522,6 @@
             }
 
         </script>
-
-
         <div class="blank"></div>
 
 
@@ -339,13 +544,19 @@
                 width: 115px;
             }
         </style>
-        <div class="clear"></div>
     </div>
-</div>
 </div>
 <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
 document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_1261127114'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s95.cnzz.com/z_stat.php%3Fid%3D1261127114' type='text/javascript'%3E%3C/script%3E"));</script>
 <!-- 百度统计代码 -->
+<!-- 百度统计代码 -->
+<script>var _hmt = _hmt || [];
+(function () {
+    var hm = document.createElement("script");
+    hm.src = "//hm.baidu.com/hm.js?4c871a8b5628f8e087250c049f2db6e2";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();</script><!--<div id="m_contentend" style="z-index: 200;"></div>-->
 <!-- 登录弹出框 -->
 <div id="_login_" style="z-index: 101;display:none;">
     <div class="com_dialog com_widget com_widget-content com_corner-all com_draggable"
@@ -391,8 +602,8 @@ document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_126112
         </div>
     </div>
     <div style="display: block; z-index: 1000; top: 0px; left: 0px; position: fixed; height: 100%; width: 100%; opacity: 0.5; background-color: rgb(204, 204, 204);"></div>
-</div>    <!-- 登录弹出框 end -->
-<img src="http://strip.elong.com/statistics/record.gif/?pageType=domesticPage&bns=4"/>
+</div>        <!-- 登录弹出框 end -->
+<img src="http://strip.elong.com/statistics/record.gif/?pageType=destIndexPage&bns=4"/>
 </body>
 </html>
 <script type="text/javascript" src="http://img.trip.elong.com/static/guide/js/lvyou/login_model.js"></script>
@@ -401,7 +612,7 @@ document.write(unescape("%3Cspan style='display:none;' id='cnzz_stat_icon_126112
 <script type="text/javascript" src="http://m.elongstatic.com/trip/pc/default/common/js/ajax.js"></script>
 <script type="text/javascript" src="http://m.elongstatic.com/trip/pc/default/dest/js/common.js"></script>
 <script type="text/javascript" src="http://m.elongstatic.com/trip/pc/default/common/js/scrolltopcontrol.js"></script>
-<script type="text/javascript" src="http://s.trip.elong.com/static/js/ad.js" id="ad_script" did=""></script>
+<script type="text/javascript" src="http://s.trip.elong.com/static/js/ad.js" id="ad_script" did="30317"></script>
 <script type="text/javascript" src="http://www.elongstatic.com/common/js/systemall.js?20180519"></script>
 <script type="text/javascript" language="javascript">
     $(function () {

@@ -15,10 +15,10 @@
 }
 .textareaComment{
     resize: none;
-    width: 350px;
+    width: auto;
     height: 100px;
-    max-width: 350px;
-    max-height: 100px;
+    /*max-width: 350px;*/
+    /*max-height: 100px;*/
 }
 .oa_form{
     margin:0;

@@ -1,5 +1,7 @@
 package cn.tmp.controller;
 
+import cn.tmp.po.Consumer;
+import cn.tmp.po.Leavemessage;
 import cn.tmp.po.Page;
 import cn.tmp.service.LeavemessageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.Date;
 
 @Controller
 @RequestMapping(value = "/leavemessage",produces = {"application/json;charset=UTF-8"} )
@@ -22,15 +27,17 @@ public class LeavemessageController {
         return "leavemessage";
     }
 
-//    @RequestMapping("/detail/{id}")
-//    public String detail(@PathVariable Integer id,HttpServletRequest request) {
-//        Leavemessage leavemessage = leavemessageService.selectByPrimaryKey(id);
-//        List<Leavemessage> list = new ArrayList<>();
-//        list.add(leavemessage);
-//        List<VoLeavemessage> list1 = leavemessageService.vo(list);
-//        request.setAttribute("leavemessage", list1.get(0));
-//        return "leavemessage_detail";
-//    }
+    @RequestMapping("/addition")
+    public void addition(Leavemessage leavemessage, HttpServletRequest request, HttpServletResponse response) throws IOException {
+        leavemessage.setPublishtime(new Date());
+        leavemessage.setPublisher(((Consumer)request.getSession().getAttribute("consumer")).getName());
+        try {
+            leavemessageService.insert(leavemessage);
+        } catch (Exception e) {
+        }
+        response.sendRedirect("/leavemessage/ui");
+        return;
+    }
 
 
 }
