@@ -28,6 +28,7 @@
             <value>
                 /order/** = user
                 /shoppingCart/** = user
+                /leavemessage/addition = user
                 /** = anon
             </value>
         </property>
