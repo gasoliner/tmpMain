@@ -133,7 +133,7 @@
                             <dl style="width: 100%" class="yz-view">
                                 <dt><span class="more v-more"></span><b></b></dt>
                                 <c:forEach items="${route.voRouteList}" var="rou">
-                                    <dd style="width: auto"><a href="${pageContext.request.contextPath}/route/detail/${rou.rtid}" target="_blank">${rou.name}</a></dd>
+                                    <dd style="width: auto;margin-right: 10px;"><a href="${pageContext.request.contextPath}/route/detail/${rou.rtid}" target="_blank">${rou.name}</a></dd>
                                 </c:forEach>
                             </dl>
                         </div>
