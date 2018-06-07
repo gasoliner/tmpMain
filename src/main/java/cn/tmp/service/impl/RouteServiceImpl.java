@@ -1,6 +1,7 @@
 package cn.tmp.service.impl;
 
 import cn.tmp.mapper.RouteMapper;
+import cn.tmp.po.Attraction;
 import cn.tmp.po.Page;
 import cn.tmp.po.Route;
 import cn.tmp.po.RouteExample;
@@ -67,13 +68,18 @@ public class RouteServiceImpl implements RouteService {
                 list) {
             VoRoute voRoute = new VoRoute(route);
             StringBuilder builder = new StringBuilder("开始-->");
+            Double price = 0D;
             for (String aid:
                     voRoute.getAids().split(",")) {
-                builder.append(attractionService.selectByPrimaryKey(Integer.parseInt(aid)).getName() + "-->");
+                Attraction attraction = attractionService.selectByPrimaryKey(Integer.parseInt(aid));
+                builder.append(attraction.getName() + "-->");
+                price = price + attraction.getPrice().doubleValue();
             }
             builder.append("结束");
             voRoute.setVoAids(builder.toString());
             voRoute.setVoRid(regionService.selectByPrimaryKey(voRoute.getRid()).getName());
+
+            voRoute.setPrice(price);
             list1.add(voRoute);
         }
         return list1;

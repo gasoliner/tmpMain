@@ -113,6 +113,38 @@
                         </section>
                         <div name="ad41"></div>
                         <div class="clear"></div>
+
+                            <section class="dnew-jj">
+                                <header class="dnew-title">
+                                    <div class="dtitle">
+                                        <em class="jj-icon"></em>
+                                        <h2><a href="#">路线门票</a>
+                                        </h2>
+                                    </div>
+                                </header>
+                                <div class="lygs-link">
+                                    <div class="dnew-sum">
+                                        <dl>
+                                            <dt>
+                                            </dt>
+                                            <dd>
+                                                <h3>${route.name}路线门票</h3>
+
+                                                <div class="price-yd">
+			<span class="sq-price">
+                                                        <span class="ph">&yen</span>${route.price}<span class="pb"></span>
+                                                    </span>
+                                                    <div class="clear"></div>
+                                                </div>
+                                                <div class="tfour-c"><a href="${pageContext.request.contextPath}/shoppingCart/createNewItem?kind=路线&price=${route.price}&name=${route.name}路线打包门票"
+                                                                        target="_blank" title="查看" class="tfour-yd"></a>
+                                                </div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </section>
+
                         <section class="dnew-zstj">
 
                         </section>

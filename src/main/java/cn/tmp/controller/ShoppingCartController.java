@@ -68,6 +68,7 @@ public class ShoppingCartController {
         orders.setVar("无");
         try {
             ordersService.insert(orders);
+            request.getSession().removeAttribute("shoppingCart");
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -122,9 +123,12 @@ public class ShoppingCartController {
         List<Item> jiudian = shoppingCart.getMap().get("酒店");
 //        特产
         List<Item> techan = shoppingCart.getMap().get("特产");
+//        路线
+        List<Item> luxian = shoppingCart.getMap().get("路线");
         request.setAttribute("menpiao", menpiao);
         request.setAttribute("jiudian", jiudian);
         request.setAttribute("techan", techan);
+        request.setAttribute("luxian", luxian);
         request.setAttribute("sum", shoppingCart.getSum());
         return "shoppingCartDetail";
     }

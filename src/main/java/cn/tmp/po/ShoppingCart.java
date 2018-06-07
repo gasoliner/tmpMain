@@ -15,6 +15,7 @@ public class ShoppingCart {
         map.put("门票",new ArrayList<Item>());
         map.put("酒店",new ArrayList<Item>());
         map.put("特产",new ArrayList<Item>());
+        map.put("路线",new ArrayList<Item>());
     }
 
     public Map<String, List<Item>> getMap() {

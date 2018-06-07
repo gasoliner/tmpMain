@@ -14,6 +14,8 @@ public class VoRoute extends Route {
 
     private Integer[] voAidss;
 
+    private Double price;
+
     private List<Attraction> attractionList;
 
     public VoRoute(Route route) {
@@ -25,6 +27,14 @@ public class VoRoute extends Route {
     }
 
     public VoRoute() {}
+
+    public Double getPrice() {
+        return price;
+    }
+
+    public void setPrice(Double price) {
+        this.price = price;
+    }
 
     public List<Attraction> getAttractionList() {
         return attractionList;

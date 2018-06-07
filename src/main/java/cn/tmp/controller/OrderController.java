@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +43,20 @@ public class OrderController {
         List<VoOrders> list1 = ordersService.vo(list);
         request.setAttribute("order", list1.get(0));
         return "order_detail";
+    }
+
+    @RequestMapping("/received/{id}")
+    public void received(@PathVariable Integer id, HttpServletResponse response) throws IOException {
+        Orders orders = new Orders();
+        orders.setOid(id);
+        orders.setState("已收货");
+        try {
+            ordersService.update(orders);
+        } catch (Exception e) {
+
+        }
+        response.sendRedirect("/order/ui");
+        return;
     }
 
 

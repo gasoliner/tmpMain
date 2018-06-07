@@ -148,6 +148,34 @@
                         <div name="ad41"></div>
                         <div class="clear"></div>
                         <!--简介-->
+                        <!--简介-->
+                        <section class="dnew-jj">
+                            <header class="dnew-title">
+                                <div class="dtitle">
+                                    <em class="jj-icon"></em>
+                                    <h2><a href="#">路线类</a>
+                                    </h2>
+                                </div>
+                            </header>
+                            <div class="lygs-link">
+                                <%--<a href="http://trip.elong.com/yadingziranbaohuqu/jianjie/" target="_blank">简介</a>  |  <a href="http://trip.elong.com/yadingziranbaohuqu/jiaotong/" target="_blank">交通</a>  |  					</div>--%>
+                                    <style>
+                                        #sub{font-size:16px;width:100px;height:35px;line-height:35px;background:transparent url(/ui/sub.png) no-repeat;border:none;}
+                                    </style>
+                                    <div class="dnew-sum">
+                                        <hr/>
+                                        <c:forEach items="${luxian}" var="item4">
+                                            <label>路线名称</label>&nbsp;&nbsp; | &nbsp;&nbsp; ${item4.var} <div>&nbsp;</div>
+                                            <label>路线价格</label>&nbsp;&nbsp; | &nbsp;&nbsp; ${item4.price} <div>&nbsp;</div>
+                                            <label>数量</label>&nbsp;&nbsp; | &nbsp;&nbsp; ${item4.count} <div>&nbsp;</div>
+                                            <hr/>
+                                        </c:forEach>
+                                    </div>
+                            </div>
+                        </section>
+                        <div name="ad41"></div>
+                        <div class="clear"></div>
+                        <!--简介-->
                         <section class="dnew-jj">
                             <header class="dnew-title">
                                 <div class="dtitle">
