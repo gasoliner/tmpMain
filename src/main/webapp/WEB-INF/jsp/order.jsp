@@ -70,7 +70,7 @@
                             <header class="dnew-title">
                                 <div class="dtitle">
                                     <em class="jj-icon"></em>
-                                    <h2>${order.name}-${order.oid}
+                                    <h2>我的订单第${order.oid}号
                                     </h2>
                                 </div>
                             </header>

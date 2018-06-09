@@ -62,6 +62,12 @@
             <article class="dnew-con dnew-con1">
 
                 <aside class="dnew-left">
+                    <div>
+                        <p style="color: #ffaa55;font-size: 16px;"><b>${add_over_info}</b></p>
+                    </div>
+                    <%
+                        request.getSession().removeAttribute("add_over_info");
+                    %>
                     <section class="dleft-box">
                         <script type="text/javascript"
                                 src="http://m.elongstatic.com/trip/pc/default/dest/js/sns_home.js"></script>

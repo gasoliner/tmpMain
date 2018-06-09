@@ -58,6 +58,12 @@ public class ShoppingCartController {
                 techan) {
             orderName.append("[" + item.getVar() + "-" + item.getPrice() + "*" + item.getCount() + "份]");
         }
+//        路线
+        List<Item> luxian = shoppingCart.getMap().get("路线");
+        for (Item item:
+                luxian) {
+            orderName.append("[" + item.getVar() + "-" + item.getPrice() + "*" + item.getCount() + "份]");
+        }
 
         Orders orders = new Orders();
         orders.setName(orderName.toString());
@@ -78,7 +84,7 @@ public class ShoppingCartController {
 
     @RequestMapping("/add")
     public void add(String kind, Double price, String name, Integer count, HttpServletRequest request,HttpServletResponse response) throws IOException {
-        if (count == null) {
+        if (count == null || count == 0) {
             response.sendRedirect("/");
             return;
         }
@@ -95,6 +101,7 @@ public class ShoppingCartController {
 //        修改sum值
         shoppingCart.setSum(shoppingCart.getSum() + (price * count));
         request.getSession().setAttribute("shoppingCart",shoppingCart);
+        request.getSession().setAttribute("add_over_info","TMP温馨提示：添加到购物车成功，您可以选择页面上方导航栏继续浏览");
         response.sendRedirect("/shoppingCart/detail");
         return;
     }

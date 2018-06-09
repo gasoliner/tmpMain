@@ -29,8 +29,8 @@
 
     <div id="header">
 
-        <div class="clear"></div>
-        <div class="blank10"></div>
+        <jsp:include page="neg.jsp"/>
+
 
         <!--没头图-->
         <header class="dnew-hno">
@@ -105,7 +105,7 @@
                                 <div class="dnew-sum">
                                     开始————>
                                     <c:forEach items="${route.attractionList}" var="att">
-                                        <a href="${pageContext.request.contextPath}/attraction/detail/${att.aid}" target="_blank">${att.name}</a> ————>
+                                        <a href="${pageContext.request.contextPath}/attraction/detail/${att.aid}" >${att.name}</a> ————>
                                     </c:forEach>
                                     结束
                                 </div>
@@ -118,7 +118,7 @@
                                 <header class="dnew-title">
                                     <div class="dtitle">
                                         <em class="jj-icon"></em>
-                                        <h2><a href="#">路线门票</a>
+                                        <h2><a href="#"><路线></路线>门票</a>
                                         </h2>
                                     </div>
                                 </header>

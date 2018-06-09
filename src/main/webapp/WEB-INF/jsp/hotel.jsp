@@ -128,12 +128,12 @@
                 <!--------region begin--------->
                 <div style="height: auto" class="view-address">
                     <div class="hottj-header yz-header address-header">
-                        <h2><a target="_blank" href="/hotel/detail/${hotel.hid}">${hotel.name}</a></h2>
+                        <h2><a href="/hotel/detail/${hotel.hid}">${hotel.name}</a></h2>
                     </div>
                     <div>
                         <div class="va-content">
-                            <div id="Topics_big">
-                                <a target="_blank" href="/hotel/detail/${hotel.hid}">
+                            <div id="Topics_big" style="margin: 10px;">
+                                <a href="/hotel/detail/${hotel.hid}">
                                     <img src="${pageContext.request.contextPath}/hotel/img/${hotel.hid}"
                                                                                           alt="${hotel.name}" title="${hotel.name}"/></a>
                             </div>
@@ -142,7 +142,7 @@
                             <h3>酒店星级</h3>&nbsp;&nbsp;<p>${hotel.star}</p><div>&nbsp;</div>
                             <h3>联系方式</h3>&nbsp;&nbsp;<p>${hotel.phone}</p><div>&nbsp;</div>
                             <h3>酒店简介</h3>&nbsp;&nbsp;<p>${hotel.info}</p><div>&nbsp;</div>
-                            <h3><b><a target="_blank" href="/hotel/detail/${hotel.hid}">查看${hotel.name}更多讯息</a></b></h3>
+                            <h3><b><a href="/hotel/detail/${hotel.hid}">查看${hotel.name}更多讯息</a></b></h3>
                             <div class="blank10"></div>
                             <%--<dl style="width: 100%" class="yz-view">--%>
                                 <%--<dt><span class="more v-more"></span><b></b></dt>--%>

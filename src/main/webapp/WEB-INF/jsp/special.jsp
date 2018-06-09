@@ -134,7 +134,7 @@
                             <dl style="width: 100%" class="yz-view">
                                 <dt><span class="more v-more"></span><b></b></dt>
                                 <c:forEach items="${special.voSpecialList}" var="sp">
-                                    <dd><a href="${pageContext.request.contextPath}/special/detail/${sp.sid}" target="_blank">${sp.name}</a></dd>
+                                    <dd><a href="${pageContext.request.contextPath}/special/detail/${sp.sid}" >${sp.name}</a></dd>
                                 </c:forEach>
                             </dl>
                         </div>

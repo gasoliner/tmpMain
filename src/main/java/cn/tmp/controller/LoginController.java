@@ -42,10 +42,11 @@ public class LoginController {
             currentUser.login(token);
             Consumer consumer = consumerService.selectByPrimaryKey(Integer.parseInt(name));
             request.getSession().setAttribute("consumer",consumer);
+            request.getSession().removeAttribute("login_error_info");
             response.sendRedirect("/index");
         } catch (Exception e) {
             e.printStackTrace();
-            request.setAttribute("login_code","登录失败");
+            request.getSession().setAttribute("login_error_info","登录失败，用户名或者密码错误");
             response.sendRedirect("/login/ui");
         }
         return;

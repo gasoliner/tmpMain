@@ -29,8 +29,7 @@
 
     <div id="header">
 
-        <div class="clear"></div>
-        <div class="blank10"></div>
+        <jsp:include page="neg.jsp"/>
 
         <!--没头图-->
         <header class="dnew-hno">

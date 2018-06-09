@@ -29,8 +29,7 @@
 
     <div id="header">
 
-        <div class="clear"></div>
-        <div class="blank10"></div>
+        <jsp:include page="neg.jsp"/>
 
         <script type="text/javascript">
             var cname = '亚丁'; // 目的地中文名

@@ -148,7 +148,7 @@
                             <dl style="width: 100%" class="yz-view">
                                 <dt><span class="more v-more"></span><b></b></dt>
                                 <c:forEach items="${attraction.voAttractionList}" var="att">
-                                    <dd style="width: 100%"><a href="${pageContext.request.contextPath}/attraction/detail/${att.aid}" target="_blank">${att.name}</a></dd>
+                                    <dd style="width: 100%"><a href="${pageContext.request.contextPath}/attraction/detail/${att.aid}">${att.name}</a></dd>
                                 </c:forEach>
                             </dl>
                         </div>
