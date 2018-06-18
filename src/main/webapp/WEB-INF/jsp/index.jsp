@@ -143,7 +143,7 @@
 <div class="page-content wrap1200">
     <div class="clearfix trip-index-header">
         <!-- 轮播图 -->
-        <div class="fl swiper-container swiper-container-horizontal" id="trip_index_swiper">
+        <div style="width:100%" class="fl swiper-container swiper-container-horizontal" id="trip_index_swiper">
             <div class="swiper-wrapper" style="transition-duration: 300ms; transform: translate3d(-800px, 0px, 0px);">
                 <div class="swiper-slide swiper-slide-prev" style="width: 800px;">
                     <%--<a target="_blank" class="_cc" data-cc="focuspic"--%>

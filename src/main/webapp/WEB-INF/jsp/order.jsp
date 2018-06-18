@@ -29,8 +29,12 @@
     <div id="header">
         <jsp:include page="neg.jsp"/>
 
+        <div style="height: 350px;overflow:hidden">
+            <img style="width: 100%;" src="/ui/img/bg-4.jpg">
+        </div>
         <div class="clear"></div>
         <div class="blank10"></div>
+
 
         <!--没头图-->
         <header class="dnew-hno">

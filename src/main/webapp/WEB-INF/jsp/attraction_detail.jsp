@@ -31,6 +31,7 @@
 
         <jsp:include page="neg.jsp"/>
 
+
         <script type="text/javascript">
             var cname = '亚丁'; // 目的地中文名
             var did = '30317'; // 目的地id

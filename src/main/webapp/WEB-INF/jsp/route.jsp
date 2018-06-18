@@ -31,6 +31,11 @@
 
     <!--导航-->
     <jsp:include page="neg.jsp"/>
+    <div style="height: 350px;overflow:hidden">
+        <img style="width: 100%;" src="/ui/img/bg-5.jpg">
+    </div>
+    <div class="clear"></div>
+    <div class="blank10"></div>
 </div>
 
 <style type="text/css">
@@ -133,7 +138,9 @@
                             <dl style="width: 100%" class="yz-view">
                                 <dt><span class="more v-more"></span><b></b></dt>
                                 <c:forEach items="${route.voRouteList}" var="rou">
-                                    <dd style="width: auto;margin-right: 10px;"><a href="${pageContext.request.contextPath}/route/detail/${rou.rtid}">${rou.name}</a></dd>
+                                    <div style="margin: 10px;">
+                                        <dd style="width: auto;margin-right: 10px;"><a href="${pageContext.request.contextPath}/route/detail/${rou.rtid}">${rou.name}</a></dd><br/>
+                                    </div>
                                 </c:forEach>
                             </dl>
                         </div>

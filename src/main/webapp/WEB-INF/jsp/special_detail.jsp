@@ -31,6 +31,7 @@
 
         <jsp:include page="neg.jsp"/>
 
+
         <!--没头图-->
         <header class="dnew-hno">
             <h1> ${special.name}</h1>

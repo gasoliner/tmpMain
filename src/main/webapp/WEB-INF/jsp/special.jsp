@@ -31,6 +31,12 @@
 
     <!--导航-->
     <jsp:include page="neg.jsp"/>
+    <div style="height: 350px;overflow:hidden">
+        <img style="width: 100%;" src="/ui/img/bg-8.jpg">
+    </div>
+    <div class="clear"></div>
+    <div class="blank10"></div>
+
 
 </div>
 
